@@ -1,4 +1,4 @@
-'use strict';
+
 function Sigma(num){
     var sum = 0;
     for(var i = 0; i <= num; i++){
@@ -19,15 +19,54 @@ function factorial(num){
 var factNum = 3;
 //console.log(factorial(factNum));
 
-function fibonacci(input){
-    var fib = [0,1]
-    for(var i = 0; i < fib[input]; i++){
-
+function forFibonacci(input){
+    console.log("Fibonacci("+input+")");
+    var num1 = 0;
+    var num2 = 1;
+    var sum;
+    console.log("num1: "+num1+"/ num2: "+num2);
+    for(var i = 1; i < input; i++){
+        sum = num1 + num2;
+        console.log("sum: "+sum);
+        num1 = num2;
+        num2 = sum;
+        console.log("num1: "+num1+"/ num2: "+num2);
     }
-
+    return num2
 }
 var fibNum = 0;
-//console.log(fibonacci(fibNum));
+//console.log(forFibonacci(fibNum));
+
+function whileFibonacci(input){
+    if(input == 1 || input == 0){
+        return 0;
+    }
+    if(input == 2){
+        return 1;
+    }
+    var num1 = 0;
+    var num2 = 1;
+    var sum;
+    var i = 1;
+    while(i < input){
+        sum = num1 + num2;
+        console.log("sum: "+sum);
+        num1 = num2;
+        num2 = sum;
+        console.log("num1: "+num1+"/ num2: "+num2);
+        i += 1;
+    }
+    return num2;
+}
+//console.log(whileFibonacci(fibNum));
+
+function recursiveFibonacci(num){
+    if(num < 2){
+        return 1;
+    }
+    return recursiveFibonacci(num - 1) + recursiveFibonacci(num - 2);
+}
+//console.log(recursiveFibonacci(fibNum)); //this one works
 
 function second2Last(array){
     if(array.length < 2){

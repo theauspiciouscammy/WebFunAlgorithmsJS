@@ -2,41 +2,37 @@
 
 // Zero Out Negative Numbers
 // Set negative array values to zero.
-function setNegsToZero(arr)
-    {
-    for (var idx = 0; idx < arr.length; idx++)
-    //start for loop at index 0; run as long as the array; increment by 1;
-        {
-        if (arr[idx] < 0)
-        //if the index we are on is less than 0 (making it a neg. number)
-            {
+function setNegsToZero(arr){
+    for (var idx = 0; idx < arr.length; idx++){
+        //start for loop at index 0; run as long as the array; increment by 1;
+        if (arr[idx] < 0){
+            //if the index we are on is less than 0 (making it a neg. number)
             arr[idx] = 0;
             // then replace that index with 0
-            }
         }
+    }
     return arr;
 }
 console.log(setNegsToZero([-1,2,-3,4]));
 
 // Print the smallest value in a given array.
-function printMin(arr)
-    {
-        if (arr.length == 0) {
-            console.log("Empty array, no min value.");
-            return;
-            //if array is empty return empty array
+function printMin(arr){
+    if (arr.length == 0) {
+        console.log("Empty array, no min value.");
+        return;
+        //if array is empty return empty array
+    }
+    var min = arr[0];
+    //set min to be the value of index 0
+    for (var i = 1; i < arr.length; i++) {
+        //start for loop off at index 1; run through entire length of array; increment by 1;
+        if (arr[i] < min) {
+            //if the value of the index we are on is less than what min is currently
+            min = arr[i];
+            //set min to be that value
         }
-        var min = arr[0];
-        //set min to be the value of index 0
-            for (var i = 1; i < arr.length; i++) {
-                //start for loop off at index 1; run through entire length of array; increment by 1;
-                if (arr[i] < min) {
-                    //if the value of the index we are on is less than what min is currently
-                    min = arr[i];
-                    //set min to be that value
-                }
-            }
-console.log("Min value is:", min);
+    }
+    console.log("Min value is:", min);
 }
 printMin([1,2,3,4,5,6]);
 
@@ -56,7 +52,7 @@ function maxMinAverage(arr) {
             for (var idx = 1; idx < arr.length; idx++) {
                 // start for loop at index 1; run through the length of array; increment by 1;
                 if (arr[idx] < min)
-                //if the index we are on is less than what we have min set to, 
+                //if the index we are on is less than what we have min set to,
                 {
                 min = arr[idx];
                 //change min to that index.
